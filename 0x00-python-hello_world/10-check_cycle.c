@@ -10,15 +10,30 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *node = NULL;
+	listint_t *fast_node = NULL, *slow_node = NULL;
+	int flag = 1;
 
 	if (!list)
-		return (1);
+		return (0);
 
-	node = list->next;
+	fast_node = list, slow_node = list;
 
-	while (node && node != list)
-		node = node->next;
+	while (!(fast_node == slow_node) || flag)
+	{
+		flag = 0;
 
-	return (node == list);
+		if (fast_node->next != NULL)
+			fast_node = fast_node->next;
+		else
+			return (0);
+
+		if (fast_node->next != NULL)
+			fast_node = fast_node->next;
+		else
+			return (0);
+
+		slow_node = slow_node->next;
+	}
+
+	return (1);
 }
