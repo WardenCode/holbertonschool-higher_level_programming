@@ -3,9 +3,10 @@ from sys import argv
 
 if __name__ == "__main__":
     i = 1
-    arguments = len(argv) - 1
+    args = len(argv) - 1
 
-    print(f"{arguments} {'argument' if arguments == 1 else 'arguments'}{'.' if arguments == 0 else ':'}")
-    while (i <= arguments):
+    print(f"{args} {'argument' if args == 1 else 'arguments'}", end="")
+    print(f"{'.' if args == 0 else ':'}")
+    while (i <= args):
         print(f"{i}: {argv[i]}")
         i += 1
