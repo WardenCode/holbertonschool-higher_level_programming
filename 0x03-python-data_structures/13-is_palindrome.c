@@ -27,7 +27,7 @@ int is_palindrome(listint_t **head)
 	for (node = *head; node; node = node->next, i++)
 		new_string[i] = node->n;
 
-	for (i = 0, j = size; new_string[i]; i++, j--)
+	for (i = 0, j = size - 1; new_string[i]; i++, j--)
 	{
 		if (i > j)
 			break;
