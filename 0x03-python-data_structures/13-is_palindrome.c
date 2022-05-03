@@ -14,13 +14,15 @@ int is_palindrome(listint_t **head)
 	listint_t *node = NULL;
 	char *new_string = NULL;
 
-	if (*head == NULL)
+	if (head == NULL || *head == NULL)
 		return (res);
 
 	for (node = *head; node; node = node->next)
 		size++;
 
 	new_string = malloc(sizeof(char) * size);
+	if (!new_string)
+		return (0);
 
 	for (node = *head; node; node = node->next, i++)
 		new_string[i] = node->n;
