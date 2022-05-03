@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 	listint_t *node = NULL;
 	char *new_string = NULL;
 
-	if (head == NULL || *head == NULL)
+	if (*head == NULL)
 		return (res);
 
 	for (node = *head; node; node = node->next)
