@@ -29,7 +29,7 @@ int is_palindrome(listint_t **head)
 
 	for (i = 0, j = size; new_string[i]; i++, j--)
 	{
-		if (new_string[i] > new_string[j])
+		if (i > j)
 			break;
 		if (new_string[i] != new_string[j])
 			return (0);
