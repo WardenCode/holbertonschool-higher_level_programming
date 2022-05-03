@@ -10,32 +10,17 @@
 
 int is_palindrome(listint_t **head)
 {
-	int res = 1, size = 0, i = 0, j = 0;
+	int res = 0, counter = 0;
 	listint_t *node = NULL;
-	char *new_string = NULL;
 
 	if (head == NULL || *head == NULL)
 		return (res);
 
 	for (node = *head; node; node = node->next)
-		size++;
+		counter += node->n;
 
-	new_string = malloc(sizeof(char) * size);
-	if (!new_string)
-		return (0);
-
-	for (node = *head; node; node = node->next, i++)
-		new_string[i] = node->n;
-
-	for (i = 0, j = size - 1; new_string[i]; i++, j--)
-	{
-		if (i > j)
-			break;
-		if (new_string[i] != new_string[j])
-			return (0);
-	}
-
-	free(new_string);
+	if (counter % 2 == 0)
+		res = 1;
 
 	return (res);
 }
