@@ -1,6 +1,3 @@
 #!/usr/bin/python3
 def square_matrix_map(matrix=[]):
-    new_array = []
-    for arr in matrix:
-        new_array.append(list(map(lambda num: (round(num ** 2)), arr)))
-    return (new_array)
+    return list(map(lambda row: list(map(lambda num: num ** 2, row)), matrix))
