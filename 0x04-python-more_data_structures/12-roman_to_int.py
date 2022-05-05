@@ -60,4 +60,4 @@ def roman_to_int(roman_string):
 
     if (is_roman(roman_string, roman_letters)):
         return (convert(roman_string, roman_letters))
-    return (None)
+    return (0)
