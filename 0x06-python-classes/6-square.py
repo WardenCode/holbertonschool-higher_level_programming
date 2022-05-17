@@ -30,12 +30,13 @@ class Square:
 
     def my_print(self):
         """Method to print a Square with spaces"""
-        max_on_tuple = max(self.position)
         if (self.__size == 0):
             print()
         else:
+            for blank in range(self.position[1]):
+                print()
             for rows in range(self.__size):
-                print(" " * max_on_tuple, end='')
+                print(" " * self.position[0], end='')
                 print("#" * self.__size)
 
     @property
