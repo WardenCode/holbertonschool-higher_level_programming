@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This program define a class Rectangle with it attributes and methods"""
+"""This program define a class Rectangle with private attributes and methods"""
 
 
 class Rectangle():
