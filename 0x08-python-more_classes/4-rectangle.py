@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """
 A Rectangle Class with the private instance attributes width, height
-and public methods
+, public methods and special methods
 """
 
 
 class Rectangle():
     """
-    A Rectangle Class with the private instance attributes width and height
+    A Rectangle Class with the private instance attributes width, height,
+    public methods and special methods
     """
 
     def __init__(self, width=0, height=0):
