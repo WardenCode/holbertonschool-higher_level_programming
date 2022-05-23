@@ -31,6 +31,18 @@ class Rectangle():
 
         return (self.__width * 2) + (self.__height * 2)
 
+    def __str__(self):
+        """
+        Function to print a Square with #
+        """
+
+        if self.__width == 0 or self.__height == 0:
+            return ""
+
+        final = ['#' * self.__width for line in range(self.__height)]
+
+        return '\n'.join(final)
+
     @property
     def width(self):
         """Getter of the property width"""
