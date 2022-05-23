@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""This program define a class Rectangle with it attributes"""
+"""This program define a class Rectangle with it attributes and methods"""
 
 
 class Rectangle():
     """
     A Rectangle Class with the private instance attributes width and height
+    and public methods
     """
 
     def __init__(self, width=0, height=0):
