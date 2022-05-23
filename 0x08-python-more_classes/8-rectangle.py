@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """
 A Rectangle Class with public class attributes, private instance attributes
-(width, height), public methods and special methods
+(width, height), public methods, special methods and static methods
 """
 
 
 class Rectangle():
     """
     A Rectangle Class with public class attributes,
-    private instance attributes width, height, public methods and
-    special methods.
+    private instance attributes width, height, public methods,
+    special methods and static methods.
     """
 
     number_of_instances = 0
