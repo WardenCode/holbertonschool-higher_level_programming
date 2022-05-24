@@ -52,7 +52,7 @@ Note:Write the name of the function in the file, without ().
 
 - 18-answer.txt &rarr; What does this script print?
 
-- 19-answer.txt &rarr; Write a function def copy_list(l): that returns a copy of a list.
+- 19-copy_list.py &rarr; Write a function def copy_list(l): that returns a copy of a list.
 
 - 20-answer.txt &rarr; Is a a tuple?
 
