@@ -35,13 +35,12 @@ Test to realize:
      ##########
 
      >>> print_square(0)
-     <BLANKLINE>     
 
      >>> print_square(1)
      #
 
      >>> print_square(False)
-     <BLANKLINE>     
+
 
      >>> print_square(0x5)
      #####
@@ -60,7 +59,6 @@ Test to realize:
      ###
 
      >>> print_square(0b0)
-     <BLANKLINE>
 
      >>> print_square(-1)
      Traceback (most recent call last):
