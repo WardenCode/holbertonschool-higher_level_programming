@@ -3,6 +3,7 @@
 This program return the dict representation of a instance of Class.
 """
 
+
 def class_to_json(obj):
     """
     Returns the dictionary description with simple data structure
