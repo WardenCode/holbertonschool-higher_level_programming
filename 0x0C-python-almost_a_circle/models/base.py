@@ -166,12 +166,11 @@ class Base:
         Args:
           - json_string: str (that contains list[dict])
         """
-        new_list = []
 
-        if ((json_string is not None) or (len(json_string) != 0)):
-            new_list = json.loads(json_string)
+        if ((json_string is None) or (len(json_string) == 0)):
+            return []
 
-        return (new_list)
+        return (json.loads(json_string))
 
     @staticmethod
     def draw(list_rectangles, list_squares):
