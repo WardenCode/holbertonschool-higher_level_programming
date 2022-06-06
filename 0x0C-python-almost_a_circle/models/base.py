@@ -5,7 +5,7 @@ This program define a Base class for other classes
 import json
 import csv
 import os
-from posixpath import split
+import turtle
 
 
 class Base():
@@ -38,18 +38,17 @@ class Base():
           - list_objs: List of instances[Squares or Rectangles]
         """
         result = []
-        namefile = "{:s}.json"
+        namefile = cls.__name__ + ".json"
         options = ["Rectangle", "Square"]
-        shape, name = "", ""
+        name = ""
 
-        if (len(list_objs)):
+        if (list_objs is not None and len(list_objs)):
             name = type(list_objs[0]).__name__
             if (name in options):
                 if all((type(obj).__name__ == name) for obj in list_objs):
                     result = [obj.to_dictionary() for obj in list_objs]
-                    shape = name
 
-        with open(namefile.format(shape), mode="w", encoding="utf-8") as _file:
+        with open(namefile, mode="w", encoding="utf-8") as _file:
             _file.write(cls.to_json_string(result))
 
     @classmethod
@@ -100,20 +99,19 @@ class Base():
           - cls: New instance of Base
           - list_objs: List of instances[Squares or Rectangles]
         """
-        result = "[]"
-        namefile = "{:s}.csv"
+        result = []
+        namefile = cls.__name__ + ".csv"
         options = ["Rectangle", "Square"]
-        shape, name = "", ""
+        name = ""
 
-        if (len(list_objs)):
+        if (list_objs is not None and len(list_objs)):
             name = type(list_objs[0]).__name__
             if (name in options):
                 if all((type(obj).__name__ == name) for obj in list_objs):
                     result = [list(obj.to_dictionary().values())
                               for obj in list_objs]
-                    shape = name
 
-        with open(namefile.format(shape), "w", encoding="utf-8") as _file:
+        with open(namefile, "w", encoding="utf-8") as _file:
             for data in result:
                 _file.write(','.join(str(data)[1:-1].split(', ')) + '\n')
 
@@ -174,3 +172,39 @@ class Base():
             new_list = json.loads(json_string)
 
         return (new_list)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Takes all instances based with the class Base
+        and draws it.
+        Args:
+          - list_rectangles: Rectangles[]
+          - list_squares: Squares[]
+        """
+        turtle.color('purple', 'lightblue')
+        turtle.speed(4)
+        turtle.shape('turtle')
+
+        if all(inst.__class__.__name__ == 'Rectangle'
+               for inst in list_rectangles):
+            for rectangle in list_rectangles:
+                turtle.goto(rectangle.x, rectangle.y)
+                for _ in range(4):
+                    turtle.pendown()
+                    turtle.fd(rectangle.width)
+                    turtle.rt(90)
+                    turtle.fd(rectangle.height)
+                    turtle.penup()
+
+        if all(inst.__class__.__name__ == 'Square'
+               for inst in list_squares):
+            for square in list_squares:
+                turtle.goto(square.x, square.y)
+                for _ in range(4):
+                    turtle.pendown()
+                    turtle.fd(square.size)
+                    turtle.rt(90)
+                    turtle.penup()
+
+        turtle.done()
