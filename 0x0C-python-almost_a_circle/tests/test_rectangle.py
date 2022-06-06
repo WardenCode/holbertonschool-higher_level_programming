@@ -116,57 +116,6 @@ class Test_Rectangle_Area(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r2.height = 0
 
-
-# class Test_Display(unittest.TestCase):
-#     """Test Display of Rectangle"""
-
-#     def set_up(self):
-#         """set to 0 the number of objects"""
-#         Base._Base__nb_objects = 0
-
-#     def display_rectangle(self):
-#         """check if rectangle prints"""
-#         r1 = Rectangle(3, 3)
-#         with patch('sys.stdout', new=StringIO()) as draw12:
-#             self.assertEqual(draw12.getvalue(), "###\n###\n###\n")
-
-#     def display_line(self):
-#         """check if one size is 1
-#         case: no x neither y"""
-#         r2 = Rectangle(3, 1)
-#         with patch('sys.stdout', new=StringIO()) as draw12:
-#             self.assertEqual(draw12.getvalue(), "###\n")
-
-
-# class Test_str(unittest.TestCase):
-#     """Test the overriding str method"""
-#     def check_correct_print(self):
-#         """check if the method has an ok print"""
-#         r1 = Rectangle(4, 6, 2, 1, 12)
-#         r1_result = "[Rectangle] (12) 2/1 - 4/6"
-#         with patch('sys.stdout', new=StringIO()) as string12:
-#             self.assertEqual(string12.getvalue(), r1_result)
-#         r2 = Rectangle(5, 5, 1)
-#         r2_result = "[Rectangle] (1) 1/0 - 5/5"
-#         with patch('sys.stdout', new=StringIO()) as string12:
-#             self.assertEqual(string12.getvalue(), r2_result)
-
-#     def check_change_att(self):
-#         """check if print changed"""
-#         r3 = Rectangle(7, 1, 1, 2, 3)
-#         r3_result = "[Rectangle] (3) 1/2 - 7/1"
-#         with patch('sys.stdout', new=StringIO()) as string13:
-#             self.assertEqual(string13.getvalue(), r3_result)
-#         r3.id = 5
-#         r3.x = 0
-#         r3.y = 0
-#         r3.width = 7
-#         r3.height = 7
-#         r3_new_result = "[Rectangle] (5) 0/0 - 7/7"
-#         with patch('sys.stdout', new=StringIO()) as string14:
-#             self.assertEqual(string14.getvalue(), r3_new_result)
-
-
 class Test_disp(unittest.TestCase):
     """Test class for display method"""
     def set_nb_to_zero(self):

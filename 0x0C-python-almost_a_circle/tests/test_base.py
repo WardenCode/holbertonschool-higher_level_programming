@@ -56,8 +56,8 @@ class TestBase(unittest.TestCase):
     def test_string_id(self):
         base_instance = Base("Ping Pong")
         self.assertEqual(base_instance.id, "Ping Pong")
-        base_instance = Base("Hola soy Goku")
-        self.assertEqual(base_instance.id, "Hola soy Goku")
+        base_instance = Base("Tan gozu?")
+        self.assertEqual(base_instance.id, "Tan gozu?")
 
     def test_to_json_string(self):
         """

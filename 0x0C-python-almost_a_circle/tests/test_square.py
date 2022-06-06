@@ -86,7 +86,7 @@ class testcases(unittest.TestCase):
     def testing_size_typeError(self):
         """Testing typerror error for size"""
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            s = Square("luffy")
+            s = Square("should fail")
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             s = Square(False)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
@@ -133,9 +133,9 @@ class testcases(unittest.TestCase):
         with self.assertRaises(TypeError):
             s.update(size=[3, 4])
         with self.assertRaises(TypeError):
-            s.update(x="luffy")
+            s.update(x="should fail")
         with self.assertRaises(TypeError):
-            s.update(y="monkey")
+            s.update(y="should fail")
 
         with self.assertRaises(ValueError):
             s.update(size=-2)
