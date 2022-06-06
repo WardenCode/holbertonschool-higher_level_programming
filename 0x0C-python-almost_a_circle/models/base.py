@@ -8,7 +8,7 @@ import os
 import turtle
 
 
-class Base():
+class Base:
     """
     Base class for future inheritance to Shapes
     """
