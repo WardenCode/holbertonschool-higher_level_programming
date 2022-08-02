@@ -1,12 +1,12 @@
 #!/usr/bin/node
 
-const fs = require('fs');
+const fs = require('fs').promises;
 const { argv } = require('process');
 
-let content = '';
+fs.readFile(argv[2], 'utf8')
+  .then(data => fs.writeFile(argv[4], data, 'utf8'))
+  .catch(err => console.error(err));
 
-content += fs.readFileSync(argv[2], 'utf8');
-
-content += fs.readFileSync(argv[3], 'utf8');
-
-fs.writeFileSync(argv[4], content, 'utf8');
+fs.readFile(argv[3], 'utf8')
+  .then(data => fs.writeFile(argv[4], data, { flag: 'a' }, 'utf8'))
+  .catch(err => console.error(err));
