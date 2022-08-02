@@ -1,5 +1,7 @@
 #!/usr/bin/node
 
 module.converter = function (base) {
-  return ((num) => num.toString(base));
+  return function (num) {
+    num.toString(base);
+  }
 }
