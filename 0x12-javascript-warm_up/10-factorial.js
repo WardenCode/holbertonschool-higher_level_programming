@@ -3,10 +3,11 @@
 const { argv } = require('process');
 
 const factorial = (num) => {
-  const casted = parseInt(num);
-  if (casted <= 1 || Number.isNaN(casted)) return (1);
+  if (num <= 1) return (1);
 
-  return (factorial(num - 1) * casted);
+  return (factorial(num - 1) * num);
 };
 
-console.log(factorial(argv[2]));
+const parsed = parseInt(argv[2]);
+
+console.log(Number.isNaN(parsed) ? 1 : factorial(parsed));
