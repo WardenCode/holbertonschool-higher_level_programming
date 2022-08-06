@@ -20,11 +20,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id).limit(1)
+    state = session.query(State).order_by(State.id).first()
 
-    if (states.count() == 0):
+    if (state is None):
         print('Nothing')
     else:
-        for row in states:
-            print('{:d}: {:s}'.format(row.id, row.name))
+        print('{:d}: {:s}'.format(state.id, state.name))
     session.close()
