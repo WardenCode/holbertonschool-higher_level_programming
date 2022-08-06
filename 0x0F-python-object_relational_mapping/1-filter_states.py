@@ -8,13 +8,17 @@ if __name__ == '__main__':
     from sys import argv
     import MySQLdb as mysql
 
-    db = mysql.connect(host='localhost', port=3306, user=argv[1],
-                       passwd=argv[2], db=argv[3])
+    try:
+        db = mysql.connect(host='localhost', port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3])
+    except Exception:
+        print('Failed to connect to the database')
+        exit(0)
 
     cursor = db.cursor()
 
     cursor.execute("SELECT * FROM states \
-                    WHERE name LIKE 'N%' ORDER BY id ASC;")
+                    WHERE name LIKE BINARY 'N%' ORDER BY id ASC;")
 
     result_query = cursor.fetchall()
 
