@@ -26,5 +26,5 @@ if __name__ == "__main__":
         print('Nothing')
     else:
         for row in states:
-            print(f'{row.id}: {row.name}')
+            print('{:d}: {:s}'.format(row.id, row.name))
     session.close()
