@@ -25,4 +25,4 @@ if __name__ == '__main__':
     for i in range(0, 10):
         sha = json[i].get('sha')
         author = json[i].get('commit').get('author').get('name')
-        print("{:s}: {:s}".format(sha, author))
+        print("{}: {}".format(sha, author))
