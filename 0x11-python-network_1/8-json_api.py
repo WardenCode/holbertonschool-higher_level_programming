@@ -13,10 +13,10 @@ if __name__ == '__main__':
 
     if type_res == 'application/json':
         result = response.json()
-        id = result.get('id')
+        _id = result.get('id')
         name = result.get('name')
-        if (result != {} and id and name):
-            print("[{}] {}".format(id, name))
+        if (result != {} and _id and name):
+            print("[{}] {}".format(_id, name))
         else:
             print('No result')
     else:
