@@ -9,5 +9,6 @@ if __name__ == '__main__':
 
     res = response.text
 
+    print('Body response:')
     print('\t- type: {}'.format(type(res)))
     print('\t- content: {}'.format(res))
