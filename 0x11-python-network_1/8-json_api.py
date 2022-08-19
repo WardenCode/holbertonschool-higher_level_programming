@@ -7,7 +7,8 @@ if __name__ == '__main__':
     from sys import argv
 
     URL = 'http://0.0.0.0:5000/search_user'
-    response = post(URL, {'q': argv[1]})
+    data = {'q': argv[1] if len(argv) >= 2 else ""}
+    response = post(URL, data)
 
     type_res = response.headers['content-type']
 
