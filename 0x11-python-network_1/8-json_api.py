@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Sends a request to the URL and displays the body of the response."""
 
+
 if __name__ == '__main__':
     from requests import post
     from sys import argv
@@ -12,8 +13,10 @@ if __name__ == '__main__':
 
     if type_res == 'application/json':
         result = response.json()
-        if result != {}:
-            print("[{}] {}".format(result.get('id'), result.get('name')))
+        id = result.get('id')
+        name = result.get('name')
+        if (result != {} and id and name):
+            print("[{}] {}".format(id, name))
         else:
             print('No result')
     else:
