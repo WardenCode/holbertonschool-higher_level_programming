@@ -3,9 +3,9 @@ const { get } = require('axios').default;
 const urlSearch = 'https://swapi-api.hbtn.io/api/people/18/';
 
 get(process.argv[2])
-  .then(({data: { results }}) => {
+  .then(({ data: { results } }) => {
     let count = 0;
-    for (const film of results) {
+    for (let film of results) {
       if (film.characters.some(url => url === urlSearch)) { count++; }
     }
     console.log(count);
