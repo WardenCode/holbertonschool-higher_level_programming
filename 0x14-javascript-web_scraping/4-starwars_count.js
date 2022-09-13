@@ -1,13 +1,14 @@
 #!/usr/bin/node
-const { get } = require('axios').default;
-const urlSearch = 'https://swapi-api.hbtn.io/api/people/18/';
+const axios = require('axios').default;
 
-get(process.argv[2])
+axios.get(process.argv[2])
   .then(({ data: { results } }) => {
     let count = 0;
-    for (let film of results) {
-      if (film.characters.some(url => url === urlSearch)) { count++; }
-    }
+    results.forEach(({ characters }) => {
+      characters.forEach((url) => {
+        if (url.includes('18')) count++;
+      });
+    });
     console.log(count);
   })
   .catch(err => console.error(err));
