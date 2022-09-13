@@ -7,7 +7,7 @@ get(`${baseUrl}?completed=true`)
     const res = {};
     for (const info of data) {
       const userId = info.userId;
-      res[userId] ? res[userId]++ : res[userId] = 1;
+      res[userId] !== undefined ? res[userId]++ : res[userId] = 1;
     }
     console.log(res);
   })
