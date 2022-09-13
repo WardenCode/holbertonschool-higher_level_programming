@@ -2,11 +2,12 @@
 const { get } = require('axios').default;
 const baseUrl = process.argv[2];
 
-get(`${baseUrl}?completed=true`)
+get(`${baseUrl}`)
   .then(({ data }) => {
     const res = {};
-    data.forEach(({ info: { userId } }) => {
-      res[userId] !== undefined ? res[userId]++ : res[userId] = 1;
+    data.forEach(({ userId, completed }) => {
+      if (res[userId] === undefined) res[userId] = 0;
+      if (completed) res[userId] += 1;
     });
     console.log(res);
   })
